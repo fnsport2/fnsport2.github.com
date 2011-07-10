@@ -14,4 +14,10 @@
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>GEM</name>
+			<value>file:/C:/Users/Flip/.gem</value>
+		</variable>
+	</variableList>
 </projectDescription>
