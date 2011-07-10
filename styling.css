@@ -21,7 +21,7 @@
 	text-align: center;
 }
 .headingtext{
-	padding: 0px auto;
+	padding: 0px;
 	
 }
 
@@ -58,7 +58,7 @@ padding:0;
 
 a:hover,a:active{
 	background-color: black;
-	color: ivory;
+	color: white;
 }
 
 #content-box{
