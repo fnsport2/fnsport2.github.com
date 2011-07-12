@@ -32,7 +32,10 @@
 	display: block;
 	padding: 0px;
 	margin: 0px;
+	height:40px;
+	background-color:gray;
 }
+	
 #nav-box{
 	text-align: right;
 	padding-top:0px;
