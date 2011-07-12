@@ -28,6 +28,11 @@
 #page_box-title{
 	color: rgb(255, 255, 255);
 }
+#page-box-footer{
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}
 #nav-box{
 	text-align: right;
 	padding-top:0px;
