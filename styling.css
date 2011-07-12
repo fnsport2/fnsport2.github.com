@@ -20,20 +20,21 @@
 	padding-top:285px;
 	text-align: center;
 }
+
 .headingtext{
-	padding: 0px;
-	
+	padding: 0px;	
 }
 
 #page_box-title{
 	color: rgb(255, 255, 255);
 }
+
 #page-box-footer{
 	display: block;
 	padding: 0px;
 	margin: 0px;
 	height:40px;
-	background-color:gray;
+	/*background-color:gray;*/	
 }
 	
 #nav-box{
@@ -41,7 +42,6 @@
 	padding-top:0px;
 	padding-left: 30px;
 	margin: 0px;
-	
 }
 
 ul
@@ -67,6 +67,8 @@ padding:0;
 a:hover,a:active{
 	background-color: black;
 	color: white;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 }
 
 #content-box{
