@@ -11,6 +11,7 @@
 #page-box{
 	width:860px;
 	height:auto;
+	color: rgb(255,127,80);/*coral*/
 	background-image:url("verawang-top.jpg");
 	background-color: #FFFFF0;/* ivory */
 	background-repeat: no-repeat;
