@@ -75,6 +75,7 @@ a:hover,a:active{
 #content-box{
 	padding-left: 80px;
 	padding-right: 80px;
+	color: rgb(255,127,80)/*coral*/
 }
 
 #content-img{
