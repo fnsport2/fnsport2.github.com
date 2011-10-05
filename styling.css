@@ -2,8 +2,8 @@
 
 /* Main body definitions */
 #main-body{
-	
-	background-color: rgb(210,105,30);/* chocolate*/ 
+	background-color: #FFFFF0;/* ivory */
+	/*background-color: rgb(210,105,30);/* chocolate*/ 
 	color: rgb(0, 0, 0);
 }
 
@@ -13,7 +13,8 @@
 	height:auto;
 	color: rgb(255,127,80);/*coral*/
 	background-image:url("verawang-top.jpg");
-	background-color: #FFFFF0;/* ivory */
+	background-color: rgb(210,105,30);/* chocolate*/ 
+	/*background-color: #FFFFF0;/* ivory */
 	background-repeat: no-repeat;
 	margin: 10px auto 10px auto;
 }
