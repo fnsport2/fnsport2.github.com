@@ -12,6 +12,7 @@
 	width:860px;
 	height:auto;
 	background-image:url("verawang-top.jpg");
+	background-color: #FFFFF0;/* ivory */
 	background-repeat: no-repeat;
 	margin: 10px auto 10px auto;
 }
@@ -65,7 +66,7 @@ padding:0;
 }
 
 a:hover,a:active{
-	background-color: black;
+	background-color: lime;
 	color: white;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
