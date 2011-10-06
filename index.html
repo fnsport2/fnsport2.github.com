@@ -9,7 +9,18 @@
   <title>Wedding</title>
   
   
-<script type="text/javascript">
+
+</head>
+
+
+<body id="main-body">
+
+<div id="page-box"> 
+	<div id="heading-box">       
+		<div class="headingtext" style=" font-size:25px;"><h3>Scoot's Wedding Website </h3></div>
+		<div class="headingtext"><p id="wedding_date">Date: mm/dd/yyyy</p><span id="num_days"> # days to go!</span></div>
+		
+		<script type="text/javascript">
 
 function DateDiff(d1,d2) {  
     return d1.getTime() - d2.getTime(); 
@@ -25,19 +36,8 @@ var now= new Date();
 var differenceInDays = DateDiff(now, d)/1000/60/60/24;
 
   
-document.getElementById("num_days").innerHTML=(Math.round( differenceInDays));
+document.getElementById("num_days").innerHTML= (Math.round( differenceInDays)) + " days to go!";
 </script>
-
-</head>
-
-
-<body id="main-body">
-
-<div id="page-box"> 
-	<div id="heading-box">       
-		<div class="headingtext" style=" font-size:25px;"><h3>Scoot's Wedding Website </h3></div>
-		<div class="headingtext"><p id="wedding_date">Date: mm/dd/yyyy</p><span id="num_days"> # days to go!</span></div>
-		
 	</div>
 	
 	<div id="body-box">
