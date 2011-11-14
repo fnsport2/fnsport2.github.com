@@ -1,43 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <link rel="stylesheet" type="text/css"
- href="styling.css">
-  <meta content="text/html; charset=ISO-8859-1"
- http-equiv="content-type">
-  <title>Wedding</title>
-  
-  
+<html>  
+<head>  
+  <link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css"/>
+   <script src="jquery-1.6.2.min.js"></script>
+  <script src="jquery-ui-1.8.16.custom.min.js"></script>
+  <script src="processing-1.3.6.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+  <style type="text/css">
+    #horizontal_slider, #vertical_slider { margin: 10px;}
+	#vertical_slider{ position: relative; left: 5%;}
+	#left { position: relative; left: 5%;}
+  </style>
+ 
+<script>
 
-</head>
+/*
+http://code.google.com/p/jquery-ui-for-ipad-and-iphone/
 
+Provides an interface layer to map touch events to jQuery UI interface elements.
 
-<body id="main-body">
+Adds support for
 
+<<<<<<< HEAD
 <div id="page-box"> 
 	<div id="heading-box">       
 		<div class="headingtext" style=" font-size:25px;"><h3>Scoot's Wedding Website </h3></div>
 		<div class="headingtext"><p id="wedding_date">Date: mm/dd/yyyy</p><span id="num_days"> # days to go!</span></div>
 		
 		<script type="text/javascript">
+=======
+Clicking = tap
+Double Clicking = double tap
+Dragging = touch and move
+Right Click = touch and hold
+It is completely unobtrusive (by using feature detection) and can be added to any jQuery UI project to provide support for apples mobile devices.
 
-function DateDiff(d1,d2) {  
-    return d1.getTime() - d2.getTime(); 
+As per the issues this code does prevent default behavior such as pinch to zoom. To avoid that issue, you can apply the changes directly to the jQuery UI elements in question. (I didn't need zoom or multi-touch features in the project this was written for)
+>>>>>>> 3cc635be573ad282e166a640284d7ed44f62fb76
 
-} 
-var d=new Date();
-var year= d.getFullYear();
-d.setFullYear(201,2,14);
-document.getElementById("wedding_date").innerHTML="March"+" "+d.getDay()+" "+year;
+*/
+$.extend($.support, {
+        touch: "ontouchend" in document
+});
 
-var now= new Date();
+//
+// Hook up touch events
+//
+$.fn.addTouch = function() {
+        if ($.support.touch) {
+                this.each(function(i,el){
+                        el.addEventListener("touchstart", iPadTouchHandler, false);
+                        el.addEventListener("touchmove", iPadTouchHandler, false);
+                        el.addEventListener("touchend", iPadTouchHandler, false);
+                        el.addEventListener("touchcancel", iPadTouchHandler, false);
+                });
+        }
+};
 
-var differenceInDays = DateDiff(now, d)/1000/60/60/24;
+var lastTap = null;     
 
+$(document).ready(function() {
+// intialize the sliders
+    $("#horizontal_slider").slider({
+	  step: 1,
+	  value: 2,
+	  min: 1,
+      max: 20,
+	  slide: function(event, ui) { slider_updateRect(0,ui.value)}
+	  });
+	  
+	  $("#vertical_slider").slider({
+	  orientation: "vertical",
+	  step: 1,
+	  value: 20,
+	  min: -20,
+      	  max: -1,
+	  slide: function(event, ui) { slider_updateRect(1,(ui.value * -1))}
+	  });
+
+//$('#horizontal_slider').dialog().addTouch();
+//$('#vertical_slider').dialog().addTouch();	
+  });
   
-document.getElementById("num_days").innerHTML= (Math.round( differenceInDays)) + " days to go!";
 </script>
+<<<<<<< HEAD
 	</div>
 	
 	<div id="body-box">
@@ -69,27 +114,138 @@ document.getElementById("num_days").innerHTML= (Math.round( differenceInDays)) +
 										our site as we get closer to the date. Can't wait till the
 										big day, hope to see you there.Don't forget to sign the guestbook</p>
 									<p style="text-align:center">Peace & Love</p>
-				
-			</div>
-			
-		</td>
-</tr>
-</table>
-	</div>
-	
-		<div id="page-box-footer">
-			<p>
-		<!--object width="400" height="27" valign="bottom">
-			<embed type="application/x-shockwave-flash" flashvars="audioUrl=Chris Brown - Beautiful People.mp3&autoPlay=true" 
-src="http://www.google.com/reader/ui/3523697345-audio-player.swf" width="400" height="27" 
-quality="best"></embed>
-</object-->
-</p>
+=======
+</head>  
+<body>
+
+<h1>Processing.js Sample</h1>    
+<pre>Lucy is building a rectangular shed on her farm.
+She wants the shed to have an area of 150 square feet.</pre>
+<p> Can you create a rectagle with an area of 150 square feet?</p>  
+
+<table>
+<tr>
+<td>
+
+</td>
+<tr>
+<td>
+ <div><input  id="width" type="text" value="2" style="width:40px;" />width
+<div id="horizontal_slider" style="width:200px;"></div>
 </div>
- 
- 
- 
- </div>
+</td>
+</tr>
+
+<tr>
+<td>
+<canvas id="canvas1" width="200" height="200"></canvas>
+</td>
+<td>
+<div id="left">
+ <input  id="height" type="text" value="2" style="width:40px;" />height 
+<div id="vertical_slider" style="height:200px;"></div></div>
+</td>
+<td> <p> Area: <span id='area'></span></p></td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<input id="play" type="button" value="Submit" onclick="button_updateRect()"/>
+</td>
+</tr>
+</table>  
+  
+<script id="script1" type="text/javascript">  
+
+var width = 20;
+var height = 20;
+
+  function G(id){return document.getElementById(id);}
+>>>>>>> 3cc635be573ad282e166a640284d7ed44f62fb76
+				
+   function updateField(){G('width').value = (this.width/10); G('height').value = (this.height/10);}
+   
+   function moveslider(){ 
+	 			
+		$( "#horizontal_slider" ).slider( "option", "value",[G('width').value] );
+		
+		$( "#vertical_slider" ).slider( "option", "value",[(G('height').value *-1)] );}
+			
+   
+  function button_updateRect(){ 
+	if(G('width').value == null || G('width').value==""){ this.width = 20;}
+	else {this.width = (G('width').value * 10);}
+  
+  if(G('height').value == null || G('height').value==""){ this.height = 20;}
+  else {this.height = (G('height').value * 10);}
+   updateField();
+   moveslider();
+   G('area').innerHTML= (this.width/10 * this.height/10);
+				}
+ function slider_updateRect(slider,value){
+	if( slider == 0) { this.width = value * 10 ;}
+	else { this.height = value * 10; }
+	updateField();
+	G('area').innerHTML= (this.width/10 * this.height/10);
+  }
+// Simple way to attach js code to the canvas is by using a function  
+function sketchProc(processing) {  
+  // Override draw function, by default it will be called 60 times per second  
+  G('area').innerHTML= ((G('width').value * G('height').value));
+   
+  processing.setup = function(){ processing.size(202,202); processing.background(0); }
+  processing.draw = function() {  
+    // determine center and max clock arm length 
+		
+	
+	function drawGrid(){
+	var x = 0;
+	var y = 0;
+	
+	drawHorizontal(21);
+	drawVertical(21);
+	
+		function drawVertical(numLines){
+		z=0;
+			while(z<numLines){
+				processing.line(x,0,x,200);
+				x+=10;
+				z++;
+			}
+		}
+		function drawHorizontal(numLines){
+		z=0;
+			while(z<numLines){
+				processing.line(0,y,200,y);
+				y+=10;
+				z++;
+			}
+		}
+	}
+    
+	function drawRect(){ 
+		processing.rect(10,10,width,height); 
+		processing.fill(255,0,0,127);}
+		
+    // erase background  
+    processing.background(224);  
+       
+	drawGrid();
+	drawRect();
+     
+  };  
+    
+}  
+  
+var canvas = document.getElementById("canvas1");  
+// attaching the sketchProc function to the canvas  
+var p = new Processing(canvas, sketchProc);  
+// p.exit(); to detach it  
+
+</script>  
+
+
+
+<div style="height:0px;width:0px;overflow:hidden;"></div>  
 
 </body>
 </html>
