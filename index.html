@@ -20,14 +20,6 @@ Provides an interface layer to map touch events to jQuery UI interface elements.
 
 Adds support for
 
-<<<<<<< HEAD
-<div id="page-box"> 
-	<div id="heading-box">       
-		<div class="headingtext" style=" font-size:25px;"><h3>Scoot's Wedding Website </h3></div>
-		<div class="headingtext"><p id="wedding_date">Date: mm/dd/yyyy</p><span id="num_days"> # days to go!</span></div>
-		
-		<script type="text/javascript">
-=======
 Clicking = tap
 Double Clicking = double tap
 Dragging = touch and move
@@ -35,7 +27,6 @@ Right Click = touch and hold
 It is completely unobtrusive (by using feature detection) and can be added to any jQuery UI project to provide support for apples mobile devices.
 
 As per the issues this code does prevent default behavior such as pinch to zoom. To avoid that issue, you can apply the changes directly to the jQuery UI elements in question. (I didn't need zoom or multi-touch features in the project this was written for)
->>>>>>> 3cc635be573ad282e166a640284d7ed44f62fb76
 
 */
 $.extend($.support, {
@@ -82,39 +73,6 @@ $(document).ready(function() {
   });
   
 </script>
-<<<<<<< HEAD
-	</div>
-	
-	<div id="body-box">
-		<table>
-			<tr>
-				<td id="nav-box" valign="top">
-					<div id="navlinks">
-					
-					<ul>
-						<li><a>Welcome</a></li>
-						<li><a>Our Story</a></li>
-						<li><a>The Proposal</a></li>
-						<li><a>Ceremony</a></li>
-						<li><a>Registry</a></li>
-						<li><a>Wedding Party</a></li>
-						<li><a>Reception</a></li>
-						<li><a>Guest Book</a></li>
-						<li><a>Guest Information</a></li>
-						<li><a>Honeymoon</a></li>
-					</ul>
-					</div>
-		</td>
-		<td id="content-box">
-			<div id="image">
-			<img id="content-img" src="bnw_beach.jpg" alt="big back">
-			</div>
-			<div id="content-text" > <p>Welcome to our site..............</p>
-									<p> Please continue to check in as we will be updating
-										our site as we get closer to the date. Can't wait till the
-										big day, hope to see you there.Don't forget to sign the guestbook</p>
-									<p style="text-align:center">Peace & Love</p>
-=======
 </head>  
 <body>
 
@@ -160,7 +118,6 @@ var width = 20;
 var height = 20;
 
   function G(id){return document.getElementById(id);}
->>>>>>> 3cc635be573ad282e166a640284d7ed44f62fb76
 				
    function updateField(){G('width').value = (this.width/10); G('height').value = (this.height/10);}
    
