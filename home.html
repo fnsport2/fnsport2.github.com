@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css"
+ href="styling.css">
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Wedding</title>
+  
+  
+
+</head>
+
+
+<body id="main-body">
+
+<div id="page-box"> 
+	<div id="heading-box">       
+		<div class="headingtext" style=" font-size:25px;"><h3>Anthony & Angel </h3></div>
+		<div class="headingtext"><p id="wedding_date">Date: mm/dd/yyyy</p><span id="num_days"> # days to go!</span></div>
+		
+		<script type="text/javascript">
+
+function DateDiff(d1,d2) {  
+    return d1.getTime() - d2.getTime(); 
+
+} 
+var d=new Date();
+var year= d.getFullYear();
+d.setFullYear(201,2,14);
+document.getElementById("wedding_date").innerHTML="March"+" "+d.getDay()+" "+year;
+
+var now= new Date();
+
+var differenceInDays = DateDiff(now, d)/1000/60/60/24;
+
+  
+document.getElementById("num_days").innerHTML= (Math.round( differenceInDays)) + " days to go!";
+</script>
+	</div>
+	
+	<div id="body-box">
+		<table>
+			<tr>
+				<td id="nav-box" valign="top">
+					<div id="navlinks">
+					
+					<ul>
+						<li><a>Welcome</a></li>
+						<li><a>Our Story</a></li>
+						<li><a>The Proposal</a></li>
+						<li><a>Wedding Party</a></li>
+						<li><a>Registry</a></li>
+						<li><a>Honeymoon</a></li>
+						<li><a>Guest Book</a></li>
+						<li><a>Photo Albums</a></li>
+					</ul>
+					</div>
+		</td>
+		<td id="content-box">
+			<div id="image">
+			<img id="content-img" src="bnw_beach.jpg" alt="big back">
+			</div>
+			<div id="content-text" > <p>Welcome to our site..............</p>
+									<p> Please continue to check in as we will be updating
+										our site as we get closer to the date. Can't wait till the
+										big day, hope to see you there.Don't forget to sign the guestbook</p>
+									<p style="text-align:center">Peace & Love</p>
+				
+			</div>
+			
+		</td>
+</tr>
+</table>
+	</div>
+	
+		<div id="page-box-footer">
+			<p>
+		<!--object width="400" height="27" valign="bottom">
+			<embed type="application/x-shockwave-flash" flashvars="audioUrl=Chris Brown - Beautiful People.mp3&autoPlay=true" 
+src="http://www.google.com/reader/ui/3523697345-audio-player.swf" width="400" height="27" 
+quality="best"></embed>
+</object-->
+</p>
+</div>
+ 
+ 
+ 
+ </div>
+
+</body>
+</html>
